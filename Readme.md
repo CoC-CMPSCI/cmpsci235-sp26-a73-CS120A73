@@ -1,32 +1,65 @@
-<!--
-[A6-2] (https://prezi.com/p/edit/-xdwv8fik5xk/)
+# A73: Circular Left Shift in Array (in-place)
 
-![A6-2](https://nimbus-screenshots.s3.amazonaws.com/s/ac06ba1edf608a5b180e7068287ef8c4.png) -->
+**Code your program here:** [https://classroom.github.com/a/liA2W0yd](https://classroom.github.com/a/liA2W0yd)
 
 ---
 
-### Open the "main.hpp"
+## 3. Elaborate on Errors and Troubleshooting
 
-> Complete functions
+- Programming algorithms used
+- Errors encountered and troubleshooting steps taken
+- Error experiences and lessons learned (how you identified and fixed each error)
 
-### Goal of this lab
+---
 
-- Move all elements N spaces to the left. The most left element will move to the last element.
-  > N: user input (one integer value)
+## [Programming Assignment Guide]
 
-### Input and Output
+**Read the Assignment Directions below, then complete the following main.cpp in your cloned Repository.**
 
-- Input: N
-- Output: Print all elements in the array after shifting left N
+In this assignment, you will complete the **shiftleft()** function in main.hpp. **Do NOT edit main.cpp** — it already drives the function.
 
-### 👓 Watch this video(Programming code included)
+Full assignment instructions are embedded below. Read them carefully before coding.
 
-> [Processing Array Contents Lab 7-5. (3 mins)](https://youtu.be/lyrttIL31L8)
+Implementation Hint
 
-## You can test your program by typing the command
+| Function: void shiftleft(int number[], int SIZE, int count) |
+|---|
+| • Rotate the array left by count positions, in place. No additional array.<br>• If count > SIZE, use count % SIZE.<br>• reverse the first count elements<br>• reverse the remaining SIZE - count elements<br>• reverse the entire array<br>• Example: [1,2,3,4,5] with count = 3 → [4,5,1,2,3]<br>• Example: [10,13,5,7,2] with count = 1 → [13,5,7,2,10] |
 
-> make test
+**How to compile and run your program:**
 
-### Do not change any files
+- To compile your program in VS Code, open the new terminal (ctrl-`) and type: g++ main.cpp -o main
+- To run your program: ./main
 
-> if you want to restore all files, just clone again with this assignment link.
+**How to test your program:**
+
+- To run all tests: make test
+- To run a specific test (e.g., T1): make test ARGS="[T1]"
+
+**[Expected Output]**
+
+*Your output should contain the correct values. The exact wording or formatting may differ — tests check values only, not the entire output.*
+
+Example run with input: 3 (count = 3)
+
+```cpp
+Enter your number for circular shift left
+    0    1    2    3    4    5    6    7    8    9
+    3    4    5    6    7    8    9    0    1    2
+```
+
+**How to pass the test:**
+
+Test items: **compile, run, T1, T2, T3, T4**
+
+| Test | Input | Expected Values (checked by test) | Points |
+|---|---|---|---|
+| T1 | shiftleft([1..5],5,3) and shiftleft([10,13,5,7,2],5,1) | [4,5,1,2,3] and [13,5,7,2,10] | 20 |
+| T2 | shiftleft([0..9],10,5) and shiftleft([1..6],6,3) | [5..9,0..4] and [4,5,6,1,2,3] | 20 |
+| T3 | shift count > SIZE (count=6 on size 5; count=11 on size 4) | uses count % SIZE — same as shift 1 / shift 3 | 20 |
+| T4 | shiftleft by 0 and by SIZE | array unchanged in both cases | 20 |
+
+To test your program, type the command in your terminal: make test
+
+**Make sure that your program passes the test and there is ✓ in your GitHub Classroom Repository.**
+

@@ -1,3 +1,6 @@
+#ifndef MAIN_HPP
+#define MAIN_HPP
+
 // Circular N left rotation in Arrays
 // [1,2,3,4,5] and we want to make 3 left rotation => Result is [4,5,1,2,3]
 // [10,13,5,7,2] and we want to make 1 left rotation => Result is [13,5,7,2,10]
@@ -12,11 +15,15 @@ void printout(int[], int);
 
 void shiftleft(int number[], int SIZE, int count)
 {
+    // TODO: rotate the array left by `count` positions, in place (no extra array).
 }
+
 void printout(int number[], int SIZE)
 {
-	for (int i = 0; i < SIZE; i++)
-		cout << setw(5) << number[i];
-	cout << endl;
-	return;
+    for (int i = 0; i < SIZE; i++)
+        cout << setw(5) << number[i];
+    cout << endl;
+    return;
 }
+
+#endif
